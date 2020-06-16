@@ -1,0 +1,53 @@
+{
+  "name": "@namespace/circle-rotate",
+  "version": "0.0.1",
+  "dependencies": {
+    "bcore": "0.0.18",
+    "jquery": "2.1.4",
+    "lodash": "4.6.1"
+  },
+  "datav": {
+    "cn_name": "circle-rotate",
+    "icon": "//datav.oss-cn-hangzhou.aliyuncs.com/uploads/images/553300035812bdd0023d120be6a30772.png",
+    "protocol": 2,
+    "type": [
+      "regular"
+    ],
+    "view": {
+      "width": "400",
+      "height": "200",
+      "minWidth": "200",
+      "minHeight": "100"
+    },
+    "apis": {
+      "source": {
+        "handler": "render",
+        "description": "接口描述",
+        "fields": {
+          "value": {
+            "description": "值说明"
+          }
+        }
+      }
+    },
+    "config": {
+      "pic1": {
+        "name": "背景图一",
+        "type": "image",
+        "default": "//datav.oss-cn-hangzhou.aliyuncs.com/uploads/images/96eb5e8882e0707be45a6f422c1c0278.png"
+      },
+      "pic2": {
+        "name": "背景图二",
+        "type": "image",
+        "default": "//datav.oss-cn-hangzhou.aliyuncs.com/uploads/images/35d5c1f24325e5fb8b9d005d29f33224.png"
+      }
+    },
+    "api_data": {
+      "source": [
+        {
+          "value": "值"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,2039 @@
+{
+  "name": "@namespace/test",
+  "version": "0.0.1",
+  "dependencies": {
+    "bcore": "0.0.18",
+    "echarts": "^4.6.0",
+    "jquery": "2.1.4",
+    "lodash": "4.6.1"
+  },
+  "datav": {
+    "cn_name": "柱状图",
+    "icon": "//img.alicdn.com/tfs/TB1SRZMJY9YBuNjy0FgXXcxcXXa-270-160.png",
+    "protocol": 2,
+    "type": ["regular_bar"],
+    "view": {
+      "width": "600",
+      "height": "200",
+      "minWidth": "40",
+      "minHeight": "20"
+    },
+    "apis": {
+      "source": {
+        "handler": "render",
+        "description": "echarts动画延迟柱状图接口描述",
+        "fields": {
+          "x": {
+            "description": "x坐标轴值"
+          },
+          "y": {
+            "description": "y坐标轴值"
+          },
+          "s": {
+            "description": "系列值",
+            "optional": true
+          }
+        }
+      }
+    },
+    "config": {
+      "legend": {
+        "name": "图例",
+        "type": "group",
+        "children": {
+          "show": {
+            "name": "显示",
+            "type": "boolean",
+            "default": true
+          },
+          "left": {
+            "name": "左侧",
+            "type": "text",
+            "default": "42%"
+          },
+          "top": {
+            "name": "顶部",
+            "type": "text",
+            "default": "auto"
+          },
+          "right": {
+            "name": "右侧",
+            "type": "text",
+            "default": "auto"
+          },
+          "bottom": {
+            "name": "底部",
+            "type": "text",
+            "default": "auto"
+          },
+          "width": {
+            "name": "宽度",
+            "type": "text",
+            "default": "auto"
+          },
+          "height": {
+            "name": "高度",
+            "type": "text",
+            "default": "auto"
+          },
+          "orient": {
+            "name": "朝向",
+            "type": "select",
+            "range": [{
+              "name": "水平",
+              "value": "horizontal"
+            }, {
+              "name": "垂直",
+              "value": "vertical"
+            }],
+            "default": "horizontal"
+          },
+          "align": {
+            "name": "对齐",
+            "type": "select",
+            "range": [{
+              "name": "自动",
+              "value": "auto"
+            }, {
+              "name": "左对齐",
+              "value": "left"
+            }, {
+              "name": "居中对齐",
+              "value": "center"
+            }, {
+              "name": "右对齐",
+              "value": "right"
+            }],
+            "default": "left"
+          },
+          "padding": {
+            "name": "内边距",
+            "type": "number",
+            "default": 5
+          },
+          "itemGap": {
+            "name": "元素间距",
+            "type": "number",
+            "default": 10
+          },
+          "itemWidth": {
+            "name": "图形宽度",
+            "type": "number",
+            "default": 25
+          },
+          "itemHeight": {
+            "name": "图形高度",
+            "type": "number",
+            "default": 14
+          },
+          "selectedMode": {
+            "name": "选择模式",
+            "type": "text",
+            "default": "true"
+          },
+          "inactiveColor": {
+            "name": "关闭颜色",
+            "type": "color",
+            "default": "#ccc"
+          },
+          "textStyle": {
+            "name": "文本样式",
+            "type": "group",
+            "children": {
+              "color": {
+                "name": "颜色",
+                "type": "color",
+                "default": "rgba(255,255,255,0.8)"
+              },
+              "fontStyle": {
+                "name": "字体样式",
+                "type": "text",
+                "default": "normal"
+              },
+              "fontWeight": {
+                "name": "字体粗细",
+                "type": "text",
+                "default": "normal"
+              },
+              "fontFamily": {
+                "name": "字体",
+                "type": "text",
+                "default": "sans-serif"
+              },
+              "fontSize": {
+                "name": "字号",
+                "type": "number",
+                "default": 10
+              }
+            },
+            "fold": true
+          },
+          "backgroundColor": {
+            "name": "背景色",
+            "type": "multicolor",
+            "default": {
+              "style": "single",
+              "value": "rgba(0,0,0,0)"
+            }
+          },
+          "borderColor": {
+            "name": "边框色",
+            "type": "multicolor",
+            "default": {
+              "style": "single",
+              "value": "#ccc"
+            }
+          },
+          "borderWidth": {
+            "name": "边框粗细",
+            "type": "number",
+            "default": 0
+          }
+        },
+        "fold": true
+      },
+      "grid": {
+        "name": "网格",
+        "type": "group",
+        "children": {
+          "show": {
+            "name": "显示",
+            "type": "boolean",
+            "default": false
+          },
+          "left": {
+            "name": "左侧",
+            "type": "text",
+            "default": "10%"
+          },
+          "top": {
+            "name": "顶部",
+            "type": "text",
+            "default": "20%"
+          },
+          "right": {
+            "name": "右侧",
+            "type": "text",
+            "default": "10%"
+          },
+          "bottom": {
+            "name": "底部",
+            "type": "text",
+            "default": "15%"
+          },
+          "width": {
+            "name": "宽度",
+            "type": "text",
+            "default": "auto"
+          },
+          "height": {
+            "name": "高度",
+            "type": "text",
+            "default": "auto"
+          },
+          "containLabel": {
+            "name": "自适应布局",
+            "type": "boolean",
+            "default": false
+          },
+          "backgroundColor": {
+            "name": "背景色",
+            "type": "multicolor",
+            "default": {
+              "style": "single",
+              "value": "rgba(0,0,0,0)"
+            }
+          },
+          "borderColor": {
+            "name": "边框色",
+            "type": "multicolor",
+            "default": {
+              "style": "single",
+              "value": "#ccc"
+            }
+          },
+          "borderWidth": {
+            "name": "边框粗细",
+            "type": "number",
+            "default": 0
+          }
+        },
+        "fold": true
+      },
+      "xAxis": {
+        "name": "x轴",
+        "type": "group",
+        "children": {
+          "show": {
+            "name": "显示",
+            "type": "boolean",
+            "default": false
+          },
+          "offset": {
+            "name": "位移",
+            "type": "number",
+            "default": 0
+          },
+          "tName": {
+            "name": "名称",
+            "type": "text",
+            "default": ""
+          },
+          "nameLocation": {
+            "name": "名称位置",
+            "type": "text",
+            "default": "end"
+          },
+          "nameTextStyle": {
+            "name": "名称样式",
+            "type": "group",
+            "children": {
+              "color": {
+                "name": "颜色",
+                "type": "color",
+                "default": "rgba(0,0,0,0)"
+              },
+              "fontStyle": {
+                "name": "字体样式",
+                "type": "text",
+                "default": "normal"
+              },
+              "fontWeight": {
+                "name": "字体粗细",
+                "type": "text",
+                "default": "normal"
+              },
+              "fontFamily": {
+                "name": "字体",
+                "type": "text",
+                "default": "sans-serif"
+              },
+              "fontSize": {
+                "name": "字号",
+                "type": "number",
+                "default": 10
+              }
+            },
+            "fold": true
+          },
+          "nameGap": {
+            "name": "名称间隔",
+            "type": "number",
+            "default": 15
+          },
+          "nameRotate": {
+            "name": "名称旋转",
+            "type": "number",
+            "default": null
+          },
+          "inverse": {
+            "name": "反向",
+            "type": "boolean",
+            "default": false
+          },
+          "boundaryGap": {
+            "name": "留白",
+            "type": "boolean",
+            "default": true
+          },
+          "min": {
+            "name": "最小值",
+            "type": "text",
+            "default": "dataMin"
+          },
+          "max": {
+            "name": "最大值",
+            "type": "text",
+            "default": "dataMax"
+          },
+          "scale": {
+            "name": "自动伸缩",
+            "type": "boolean",
+            "default": false
+          },
+          "splitNumber": {
+            "name": "分割段数",
+            "type": "number",
+            "default": 5
+          },
+          "minInterval": {
+            "name": "最小间隔大小",
+            "type": "number",
+            "default": 0
+          },
+          "logBase": {
+            "name": "对数轴底数",
+            "type": "number",
+            "default": 10
+          },
+          "silent": {
+            "name": "静态",
+            "type": "boolean",
+            "default": false
+          },
+          "axisLine": {
+            "name": "轴线",
+            "type": "group",
+            "children": {
+              "show": {
+                "name": "显示",
+                "type": "boolean",
+                "default": false
+              },
+              "onZero": {
+                "name": "在零上",
+                "type": "boolean",
+                "default": true
+              },
+              "lineStyle": {
+                "name": "轴线样式",
+                "type": "group",
+                "children": {
+                  "color": {
+                    "name": "颜色",
+                    "type": "multicolor",
+                    "default": {
+                      "style": "single",
+                      "value": "rgba(255,255,255,.8)"
+                    }
+                  },
+                  "width": {
+                    "name": "宽度",
+                    "type": "number",
+                    "default": 1
+                  },
+                  "sType": {
+                    "name": "类型",
+                    "type": "text",
+                    "default": "solid"
+                  },
+                  "opacity": {
+                    "name": "透明度",
+                    "type": "number",
+                    "default": 1
+                  }
+                },
+                "fold": true
+              }
+            },
+            "fold": true
+          },
+          "axisTick": {
+            "name": "刻度",
+            "type": "group",
+            "children": {
+              "show": {
+                "name": "显示",
+                "type": "boolean",
+                "default": false
+              },
+              "alignWithLabel": {
+                "name": "和标签对齐",
+                "type": "boolean",
+                "default": false
+              },
+              "interval": {
+                "name": "分割间隔",
+                "type": "number",
+                "default": 0
+              },
+              "inside": {
+                "name": "内部",
+                "type": "boolean",
+                "default": false
+              },
+              "length": {
+                "name": "长度",
+                "type": "number",
+                "default": 5
+              },
+              "lineStyle": {
+                "name": "轴线样式",
+                "type": "group",
+                "children": {
+                  "color": {
+                    "name": "颜色",
+                    "type": "multicolor",
+                    "default": {
+                      "style": "single",
+                      "value": "rgba(255,255,255,.8)"
+                    }
+                  },
+                  "width": {
+                    "name": "宽度",
+                    "type": "number",
+                    "default": 1
+                  },
+                  "sType": {
+                    "name": "类型",
+                    "type": "text",
+                    "default": "solid"
+                  },
+                  "opacity": {
+                    "name": "透明度",
+                    "type": "number",
+                    "default": 1
+                  }
+                },
+                "fold": true
+              }
+            },
+            "fold": true
+          },
+          "axisLabel": {
+            "name": "刻度标签",
+            "type": "group",
+            "children": {
+              "show": {
+                "name": "显示",
+                "type": "boolean",
+                "default": true
+              },
+              "interval": {
+                "name": "分割间隔",
+                "type": "number",
+                "default": 13
+              },
+              "inside": {
+                "name": "内部",
+                "type": "boolean",
+                "default": false
+              },
+              "rotate": {
+                "name": "旋转",
+                "type": "number",
+                "default": 0
+              },
+              "margin": {
+                "name": "外间距",
+                "type": "number",
+                "default": 8
+              },
+              "showMinLabel": {
+                "name": "显示最小标签",
+                "type": "boolean",
+                "default": true
+              },
+              "showMaxLabel": {
+                "name": "显示最大标签",
+                "type": "boolean",
+                "default": true
+              },
+              "textStyle": {
+                "name": "文本样式",
+                "type": "group",
+                "children": {
+                  "color": {
+                    "name": "颜色",
+                    "type": "color",
+                    "default": "rgba(255,255,255,.8)"
+                  },
+                  "fontStyle": {
+                    "name": "字体样式",
+                    "type": "text",
+                    "default": "normal"
+                  },
+                  "fontWeight": {
+                    "name": "字体粗细",
+                    "type": "text",
+                    "default": "normal"
+                  },
+                  "fontFamily": {
+                    "name": "字体",
+                    "type": "text",
+                    "default": "sans-serif"
+                  },
+                  "fontSize": {
+                    "name": "字号",
+                    "type": "number",
+                    "default": 10
+                  },
+                  "align": {
+                    "name": "对齐",
+                    "type": "select",
+                    "range": [{
+                      "name": "自动",
+                      "value": "auto"
+                    }, {
+                      "name": "左对齐",
+                      "value": "left"
+                    }, {
+                      "name": "居中对齐",
+                      "value": "center"
+                    }, {
+                      "name": "右对齐",
+                      "value": "right"
+                    }],
+                    "default": ""
+                  },
+                  "baseline": {
+                    "name": "基线",
+                    "type": "text",
+                    "default": ""
+                  }
+                },
+                "fold": true
+              }
+            },
+            "fold": true
+          },
+          "splitLine": {
+            "name": "分割线",
+            "type": "group",
+            "children": {
+              "show": {
+                "name": "显示",
+                "type": "boolean",
+                "default": false
+              },
+              "interval": {
+                "name": "分割间隔",
+                "type": "number",
+                "default": 0
+              },
+              "lineStyle": {
+                "name": "轴线样式",
+                "type": "group",
+                "children": {
+                  "width": {
+                    "name": "宽度",
+                    "type": "number",
+                    "default": 1
+                  },
+                  "sType": {
+                    "name": "类型",
+                    "type": "text",
+                    "default": "solid"
+                  },
+                  "opacity": {
+                    "name": "透明度",
+                    "type": "number",
+                    "default": 1
+                  }
+                },
+                "fold": true
+              }
+            },
+            "fold": true
+          },
+          "splitArea": {
+            "name": "分割区域",
+            "type": "group",
+            "children": {
+              "interval": {
+                "name": "分割间隔",
+                "type": "number",
+                "default": 0
+              },
+              "show": {
+                "name": "显示",
+                "type": "boolean",
+                "default": false
+              },
+              "areaStyle": {
+                "name": "区域样式",
+                "type": "group",
+                "children": {
+                  "opacity": {
+                    "name": "透明度",
+                    "type": "number",
+                    "default": 1
+                  }
+                },
+                "fold": true
+              }
+            },
+            "fold": true
+          },
+          "axisPointer": {
+            "name": "坐标轴指示器",
+            "type": "group",
+            "children": {
+              "show": {
+                "name": "显示",
+                "type": "boolean",
+                "default": true
+              },
+              "lType": {
+                "name": "类型",
+                "type": "select",
+                "default": "line",
+                "range": [{
+                  "name": "直线指示器",
+                  "value": "line"
+                }, {
+                  "name": "阴影指示器",
+                  "value": "shadow"
+                }]
+              },
+              "snap": {
+                "name": "自动吸附",
+                "type": "boolean",
+                "default": false
+              },
+              "value": {
+                "name": "初始值",
+                "type": "number",
+                "default": null
+              },
+              "status": {
+                "name": "状态",
+                "type": "boolean",
+                "default": false
+              },
+              "label": {
+                "name": "标签",
+                "type": "group",
+                "children": {
+                  "show": {
+                    "name": "显示",
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "precision": {
+                    "name": "小数精度",
+                    "type": "number",
+                    "default": "'auto'"
+                  },
+                  "margin": {
+                    "name": "外间距",
+                    "type": "boolean",
+                    "default": 3
+                  },
+                  "textStyle": {
+                    "name": "文本样式",
+                    "type": "group",
+                    "children": {
+                      "color": {
+                        "name": "颜色",
+                        "type": "color",
+                        "default": "#ffffff"
+                      },
+                      "fontStyle": {
+                        "name": "字体样式",
+                        "type": "text",
+                        "default": "normal"
+                      },
+                      "fontWeight": {
+                        "name": "字体粗细",
+                        "type": "text",
+                        "default": "normal"
+                      },
+                      "fontFamily": {
+                        "name": "字体",
+                        "type": "text",
+                        "default": "sans-serif"
+                      },
+                      "fontSize": {
+                        "name": "字号",
+                        "type": "number",
+                        "default": 10
+                      }
+                    },
+                    "fold": true
+                  },
+                  "backgroundColor": {
+                    "name": "背景色",
+                    "type": "text",
+                    "default": "auto"
+                  },
+                  "borderColor": {
+                    "name": "边框色",
+                    "type": "text",
+                    "default": ""
+                  },
+                  "borderWidth": {
+                    "name": "边框粗细",
+                    "type": "text",
+                    "default": ""
+                  }
+                },
+                "fold": true
+              },
+              "lineStyle": {
+                "name": "轴线样式",
+                "type": "group",
+                "show": [
+                  ["type", "$eq", "line"]
+                ],
+                "children": {
+                  "color": {
+                    "name": "颜色",
+                    "type": "multicolor",
+                    "default": {
+                      "style": "single",
+                      "value": "rgba(0,0,0,0)"
+                    }
+                  },
+                  "width": {
+                    "name": "宽度",
+                    "type": "number",
+                    "default": 1
+                  },
+                  "sType": {
+                    "name": "类型",
+                    "type": "text",
+                    "default": "solid"
+                  },
+                  "opacity": {
+                    "name": "透明度",
+                    "type": "number",
+                    "default": 1
+                  }
+                },
+                "fold": true
+              },
+              "shadowStyle": {
+                "name": "阴影样式",
+                "type": "group",
+                "show": [
+                  ["type", "$eq", "shadow"]
+                ],
+                "children": {
+                  "color": {
+                    "name": "颜色",
+                    "type": "multicolor",
+                    "default": {
+                      "style": "single",
+                      "value": "rgba(150,150,150,0.3)"
+                    }
+                  },
+                  "opacity": {
+                    "name": "透明度",
+                    "type": "number",
+                    "default": 1
+                  }
+                },
+                "fold": true
+              },
+              "handle": {
+                "name": "拖拽手柄",
+                "type": "group",
+                "children": {
+                  "show": {
+                    "name": "显示",
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "size": {
+                    "name": "大小",
+                    "type": "number",
+                    "default": 45
+                  },
+                  "margin": {
+                    "name": "外间距",
+                    "type": "number",
+                    "default": 50
+                  },
+                  "color": {
+                    "name": "颜色",
+                    "type": "text",
+                    "default": "#333"
+                  },
+                  "throttle": {
+                    "name": "刷新频率",
+                    "type": "number",
+                    "default": 40
+                  }
+                },
+                "fold": true
+              }
+            },
+            "fold": true
+          }
+        },
+        "fold": true
+      },
+      "yAxis": {},
+      "tooltip": {},
+      "series": {
+        "name": "系列",
+        "type": "array",
+        "fold": true,
+        "default": [{
+          "name": "bar",
+          "type": "bar",
+          "legendHoverLink": true,
+          "coordinateSystem": "cartesian2d",
+          "label": {
+            "normal": {
+              "show": false,
+              "textStyle": {
+                "color": "#000",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+                "fontFamily": "sans-serif",
+                "fontSize": 10
+              }
+            },
+            "emphasis": {
+              "show": false,
+              "textStyle": {
+                "color": "#000",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+                "fontFamily": "sans-serif",
+                "fontSize": 10
+              }
+            }
+          },
+          "itemStyle": {
+            "normal": {
+              "color": {
+                "style": "single",
+                "value": "#00c2ff"
+              },
+              "borderColor": {
+                "style": "single",
+                "value": "#000"
+              },
+              "borderWidth": 0,
+              "borderType": "solid",
+              "barBorderRadius": 0,
+              "opacity": 1
+            },
+            "emphasis": {
+              "color": {
+                "style": "single",
+                "value": "#00c2ff"
+              },
+              "borderColor": {
+                "style": "single",
+                "value": "#000"
+              },
+              "borderWidth": 0,
+              "borderType": "solid",
+              "opacity": 1
+            }
+          },
+          "stack": "",
+          "barWidth": "50%",
+          "barMinHeight": 0,
+          "barGap": "30%",
+          "barCategoryGap": "20%",
+          "silent": false
+        }, 
+        {
+          "name": "bar2",
+          "type": "bar",
+          "legendHoverLink": true,
+          "coordinateSystem": "cartesian2d",
+          "label": {
+            "normal": {
+              "show": false,
+              "textStyle": {
+                "color": "#000",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+                "fontFamily": "sans-serif",
+                "fontSize": 10
+              }
+            },
+            "emphasis": {
+              "show": false,
+              "textStyle": {
+                "color": "#000",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+                "fontFamily": "sans-serif",
+                "fontSize": 10
+              }
+            }
+          },
+          "itemStyle": {
+            "normal": {
+              "color": {
+                "style": "single",
+                "value": "#5bffb0"
+              },
+              "borderColor": {
+                "style": "single",
+                "value": "#000"
+              },
+              "borderWidth": 0,
+              "borderType": "solid",
+              "barBorderRadius": 0,
+              "opacity": 1
+            },
+            "emphasis": {
+              "color": {
+                "style": "single",
+                "value": "#5bffb0"
+              },
+              "borderColor": {
+                "style": "single",
+                "value": "#000"
+              },
+              "borderWidth": 0,
+              "borderType": "solid",
+              "opacity": 1
+            }
+          },
+          "stack": "",
+          "barWidth": "50%",
+          "barMinHeight": 0,
+          "barGap": "30%",
+          "barCategoryGap": "20%",
+          "silent": false
+        }],
+        "child": {
+          "type": "object",
+          "name": "系列<%= i+1 %>",
+          "child": {
+            "name": {
+              "name": "名称",
+              "type": "text",
+              "default": ""
+            },
+            "legendHoverLink": {
+              "name": "图例联动高亮",
+              "type": "boolean",
+              "default": true
+            },
+            "coordinateSystem": {
+              "name": "坐标系",
+              "type": "text",
+              "default": "cartesian2d"
+            },
+            "label": {
+              "name": "标签",
+              "type": "group",
+              "children": {
+                "normal": {
+                  "name": "普通项",
+                  "type": "group",
+                  "children": {
+                    "show": {
+                      "name": "显示",
+                      "type": "boolean",
+                      "default": false
+                    },
+                    "textStyle": {
+                      "name": "文本样式",
+                      "type": "group",
+                      "children": {
+                        "color": {
+                          "name": "颜色",
+                          "type": "color",
+                          "default": "#000"
+                        },
+                        "fontStyle": {
+                          "name": "字体样式",
+                          "type": "text",
+                          "default": "normal"
+                        },
+                        "fontWeight": {
+                          "name": "字体粗细",
+                          "type": "text",
+                          "default": "normal"
+                        },
+                        "fontFamily": {
+                          "name": "字体",
+                          "type": "text",
+                          "default": "sans-serif"
+                        },
+                        "fontSize": {
+                          "name": "字号",
+                          "type": "number",
+                          "default": 10
+                        }
+                      },
+                      "fold": true
+                    }
+                  },
+                  "fold": true
+                },
+                "emphasis": {
+                  "name": "重点项",
+                  "type": "group",
+                  "children": {
+                    "show": {
+                      "name": "显示",
+                      "type": "boolean",
+                      "default": false
+                    },
+                    "textStyle": {
+                      "name": "文本样式",
+                      "type": "group",
+                      "children": {
+                        "color": {
+                          "name": "颜色",
+                          "type": "color",
+                          "default": "#000"
+                        },
+                        "fontStyle": {
+                          "name": "字体样式",
+                          "type": "text",
+                          "default": "normal"
+                        },
+                        "fontWeight": {
+                          "name": "字体粗细",
+                          "type": "text",
+                          "default": "normal"
+                        },
+                        "fontFamily": {
+                          "name": "字体",
+                          "type": "text",
+                          "default": "sans-serif"
+                        },
+                        "fontSize": {
+                          "name": "字号",
+                          "type": "number",
+                          "default": 10
+                        }
+                      },
+                      "fold": true
+                    }
+                  },
+                  "fold": true
+                }
+              },
+              "fold": true
+            },
+            "itemStyle": {
+              "name": "元素样式",
+              "type": "group",
+              "children": {
+                "normal": {
+                  "name": "普通项",
+                  "type": "group",
+                  "children": {
+                    "color": {
+                      "name": "颜色",
+                      "type": "multicolor",
+                      "default": {
+                        "style": "single",
+                        "value": "rgba(0,0,0,0)"
+                      }
+                    },
+                    "borderColor": {
+                      "name": "边框色",
+                      "type": "multicolor",
+                      "default": {
+                        "style": "single",
+                        "value": "#000"
+                      }
+                    },
+                    "borderWidth": {
+                      "name": "边框粗细",
+                      "type": "number",
+                      "default": 0
+                    },
+                    "borderType": {
+                      "name": "边框样式",
+                      "type": "text",
+                      "default": "solid"
+                    },
+                    "barBorderRadius": {
+                      "name": "柱状图圆角",
+                      "type": "number",
+                      "default": 0
+                    },
+                    "opacity": {
+                      "name": "透明度",
+                      "type": "number",
+                      "default": 1
+                    }
+                  },
+                  "fold": true
+                },
+                "emphasis": {
+                  "name": "重点项",
+                  "type": "group",
+                  "children": {
+                    "color": {
+                      "name": "颜色",
+                      "type": "multicolor",
+                      "default": {
+                        "style": "single",
+                        "value": "rgba(0,0,0,0)"
+                      }
+                    },
+                    "borderColor": {
+                      "name": "边框色",
+                      "type": "multicolor",
+                      "default": {
+                        "style": "single",
+                        "value": "#000"
+                      }
+                    },
+                    "borderWidth": {
+                      "name": "边框粗细",
+                      "type": "number",
+                      "default": 0
+                    },
+                    "borderType": {
+                      "name": "边框样式",
+                      "type": "text",
+                      "default": "solid"
+                    },
+                    "opacity": {
+                      "name": "透明度",
+                      "type": "number",
+                      "default": 1
+                    }
+                  },
+                  "fold": true
+                }
+              },
+              "fold": true
+            },
+            "stack": {
+              "name": "堆叠图",
+              "type": "text",
+              "default": ""
+            },
+            "barWidth": {
+              "name": "柱子宽度",
+              "type": "text",
+              "default": "50%"
+            },
+            "barMinHeight": {
+              "name": "柱状图最小高度",
+              "type": "number",
+              "default": 0
+            },
+            "barGap": {
+              "name": "柱状图间隔",
+              "type": "text",
+              "default": "30%"
+            },
+            "barCategoryGap": {
+              "name": "类目间柱子间距",
+              "type": "text",
+              "default": "20%"
+            },
+            "silent": {
+              "name": "静态",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      },
+      "animation": {
+        "name": "动画",
+        "type": "boolean",
+        "default": true
+      },
+      "animationThreshold": {
+        "name": "动画阈值",
+        "type": "number",
+        "default": 2000
+      },
+      "animationDuration": {
+        "name": "动画时长",
+        "type": "number",
+        "default": 1000
+      },
+      "animationEasing": {
+        "name": "缓动效果",
+        "type": "text",
+        "default": "elasticOut"
+      }
+    },
+    "api_data": {
+      "source": [{
+        "x": "类目0",
+        "y": 0,
+        "s": "bar"
+      }, {
+        "x": "类目0",
+        "y": -50,
+        "s": "bar2"
+      }, {
+        "x": "类目1",
+        "y": -8.901463875624668,
+        "s": "bar"
+      }, {
+        "x": "类目1",
+        "y": -47.18992898088751,
+        "s": "bar2"
+      }, {
+        "x": "类目2",
+        "y": -17.025413764148556,
+        "s": "bar"
+      }, {
+        "x": "类目2",
+        "y": -42.54426104547181,
+        "s": "bar2"
+      }, {
+        "x": "类目3",
+        "y": -24.038196249566663,
+        "s": "bar"
+      }, {
+        "x": "类目3",
+        "y": -36.290773900754886,
+        "s": "bar2"
+      }, {
+        "x": "类目4",
+        "y": -29.66504684804471,
+        "s": "bar"
+      }, {
+        "x": "类目4",
+        "y": -28.71517529663627,
+        "s": "bar2"
+      }, {
+        "x": "类目5",
+        "y": -33.699527649688676,
+        "s": "bar"
+      }, {
+        "x": "类目5",
+        "y": -20.146937097399626,
+        "s": "bar2"
+      }, {
+        "x": "类目6",
+        "y": -36.00971978255796,
+        "s": "bar"
+      }, {
+        "x": "类目6",
+        "y": -10.94374119697364,
+        "s": "bar2"
+      }, {
+        "x": "类目7",
+        "y": -36.541005056170455,
+        "s": "bar"
+      }, {
+        "x": "类目7",
+        "y": -1.4752538113770308,
+        "s": "bar2"
+      }, {
+        "x": "类目8",
+        "y": -35.31542466107655,
+        "s": "bar"
+      }, {
+        "x": "类目8",
+        "y": 7.893046603320797,
+        "s": "bar2"
+      }, {
+        "x": "类目9",
+        "y": -32.427752866005996,
+        "s": "bar"
+      }, {
+        "x": "类目9",
+        "y": 16.81528588241657,
+        "s": "bar2"
+      }, {
+        "x": "类目10",
+        "y": -28.038563739693934,
+        "s": "bar"
+      }, {
+        "x": "类目10",
+        "y": 24.979206795219028,
+        "s": "bar2"
+      }, {
+        "x": "类目11",
+        "y": -22.364693082297347,
+        "s": "bar"
+      }, {
+        "x": "类目11",
+        "y": 32.11821023962515,
+        "s": "bar2"
+      }, {
+        "x": "类目12",
+        "y": -15.667600860943732,
+        "s": "bar"
+      }, {
+        "x": "类目12",
+        "y": 38.02096119056733,
+        "s": "bar2"
+      }, {
+        "x": "类目13",
+        "y": -8.240217424060843,
+        "s": "bar"
+      }, {
+        "x": "类目13",
+        "y": 42.53821720798438,
+        "s": "bar2"
+      }, {
+        "x": "类目14",
+        "y": -0.3929067389459173,
+        "s": "bar"
+      }, {
+        "x": "类目14",
+        "y": 45.58667093073836,
+        "s": "bar2"
+      }, {
+        "x": "类目15",
+        "y": 7.560799717904647,
+        "s": "bar"
+      }, {
+        "x": "类目15",
+        "y": 47.14973738101559,
+        "s": "bar2"
+      }, {
+        "x": "类目16",
+        "y": 15.318054209871054,
+        "s": "bar"
+      }, {
+        "x": "类目16",
+        "y": 47.275355710354944,
+        "s": "bar2"
+      }, {
+        "x": "类目17",
+        "y": 22.599523033552096,
+        "s": "bar"
+      }, {
+        "x": "类目17",
+        "y": 46.07100702178889,
+        "s": "bar2"
+      }, {
+        "x": "类目18",
+        "y": 29.16065418543528,
+        "s": "bar"
+      }, {
+        "x": "类目18",
+        "y": 43.6962693226927,
+        "s": "bar2"
+      }, {
+        "x": "类目19",
+        "y": 34.800927952557615,
+        "s": "bar"
+      }, {
+        "x": "类目19",
+        "y": 40.35333240268025,
+        "s": "bar2"
+      }, {
+        "x": "类目20",
+        "y": 39.37074152590451,
+        "s": "bar"
+      }, {
+        "x": "类目20",
+        "y": 36.275975292575026,
+        "s": "bar2"
+      }, {
+        "x": "类目21",
+        "y": 42.77569739999406,
+        "s": "bar"
+      }, {
+        "x": "类目21",
+        "y": 31.71756381888028,
+        "s": "bar2"
+      }, {
+        "x": "类目22",
+        "y": 44.97819140223978,
+        "s": "bar"
+      }, {
+        "x": "类目22",
+        "y": 26.938653692729076,
+        "s": "bar2"
+      }, {
+        "x": "类目23",
+        "y": 45.99632376477021,
+        "s": "bar"
+      }, {
+        "x": "类目23",
+        "y": 22.194784893913152,
+        "s": "bar2"
+      }, {
+        "x": "类目24",
+        "y": 45.900279829731865,
+        "s": "bar"
+      }, {
+        "x": "类目24",
+        "y": 17.725026430574392,
+        "s": "bar2"
+      }, {
+        "x": "类目25",
+        "y": 44.806440199911805,
+        "s": "bar"
+      }, {
+        "x": "类目25",
+        "y": 13.741778696752679,
+        "s": "bar2"
+      }, {
+        "x": "类目26",
+        "y": 42.86957840395034,
+        "s": "bar"
+      }, {
+        "x": "类目26",
+        "y": 10.422266555457615,
+        "s": "bar2"
+      }, {
+        "x": "类目27",
+        "y": 40.2735832137877,
+        "s": "bar"
+      }, {
+        "x": "类目27",
+        "y": 7.902063853319403,
+        "s": "bar2"
+      }, {
+        "x": "类目28",
+        "y": 37.22119936652441,
+        "s": "bar"
+      }, {
+        "x": "类目28",
+        "y": 6.270884006107842,
+        "s": "bar2"
+      }, {
+        "x": "类目29",
+        "y": 33.92331243435557,
+        "s": "bar"
+      }, {
+        "x": "类目29",
+        "y": 5.570756810898967,
+        "s": "bar2"
+      }, {
+        "x": "类目30",
+        "y": 30.588309963978517,
+        "s": "bar"
+      }, {
+        "x": "类目30",
+        "y": 5.796594266992678,
+        "s": "bar2"
+      }, {
+        "x": "类目31",
+        "y": 27.412031986865767,
+        "s": "bar"
+      }, {
+        "x": "类目31",
+        "y": 6.899033489892203,
+        "s": "bar2"
+      }, {
+        "x": "类目32",
+        "y": 24.56878097935778,
+        "s": "bar"
+      }, {
+        "x": "类目32",
+        "y": 8.7893381290192,
+        "s": "bar2"
+      }, {
+        "x": "类目33",
+        "y": 22.203796820272576,
+        "s": "bar"
+      }, {
+        "x": "类目33",
+        "y": 11.346045936704996,
+        "s": "bar2"
+      }, {
+        "x": "类目34",
+        "y": 20.427519715115604,
+        "s": "bar"
+      }, {
+        "x": "类目34",
+        "y": 14.42297348773613,
+        "s": "bar2"
+      }, {
+        "x": "类目35",
+        "y": 19.311867685884827,
+        "s": "bar"
+      }, {
+        "x": "类目35",
+        "y": 17.858132851517098,
+        "s": "bar2"
+      }, {
+        "x": "类目36",
+        "y": 18.888649906111855,
+        "s": "bar"
+      }, {
+        "x": "类目36",
+        "y": 21.483081596548438,
+        "s": "bar2"
+      }, {
+        "x": "类目37",
+        "y": 19.150128087782186,
+        "s": "bar"
+      }, {
+        "x": "类目37",
+        "y": 25.132218074866262,
+        "s": "bar2"
+      }, {
+        "x": "类目38",
+        "y": 20.051630602288828,
+        "s": "bar"
+      }, {
+        "x": "类目38",
+        "y": 28.651548555679597,
+        "s": "bar2"
+      }, {
+        "x": "类目39",
+        "y": 21.516023200879346,
+        "s": "bar"
+      }, {
+        "x": "类目39",
+        "y": 31.906490373810854,
+        "s": "bar2"
+      }, {
+        "x": "类目40",
+        "y": 23.439750867099516,
+        "s": "bar"
+      }, {
+        "x": "类目40",
+        "y": 34.788333671419466,
+        "s": "bar2"
+      }, {
+        "x": "类目41",
+        "y": 25.700091656548704,
+        "s": "bar"
+      }, {
+        "x": "类目41",
+        "y": 37.21906041552118,
+        "s": "bar2"
+      }, {
+        "x": "类目42",
+        "y": 28.163208735293757,
+        "s": "bar"
+      }, {
+        "x": "类目42",
+        "y": 39.154309232933485,
+        "s": "bar2"
+      }, {
+        "x": "类目43",
+        "y": 30.692553648214542,
+        "s": "bar"
+      }, {
+        "x": "类目43",
+        "y": 40.58437366457342,
+        "s": "bar2"
+      }, {
+        "x": "类目44",
+        "y": 33.1571635093161,
+        "s": "bar"
+      }, {
+        "x": "类目44",
+        "y": 41.5332247510366,
+        "s": "bar2"
+      }, {
+        "x": "类目45",
+        "y": 35.439407573791215,
+        "s": "bar"
+      }, {
+        "x": "类目45",
+        "y": 42.05565130942339,
+        "s": "bar2"
+      }, {
+        "x": "类目46",
+        "y": 37.44177367693234,
+        "s": "bar"
+      }, {
+        "x": "类目46",
+        "y": 42.23270781895,
+        "s": "bar2"
+      }, {
+        "x": "类目47",
+        "y": 39.09234039030659,
+        "s": "bar"
+      }, {
+        "x": "类目47",
+        "y": 42.165745792772285,
+        "s": "bar2"
+      }, {
+        "x": "类目48",
+        "y": 40.34865356244595,
+        "s": "bar"
+      }, {
+        "x": "类目48",
+        "y": 41.969375711588256,
+        "s": "bar2"
+      }, {
+        "x": "类目49",
+        "y": 41.19981246258526,
+        "s": "bar"
+      }, {
+        "x": "类目49",
+        "y": 41.76375960543808,
+        "s": "bar2"
+      }, {
+        "x": "类目50",
+        "y": 41.66666666666667,
+        "s": "bar"
+      }, {
+        "x": "类目50",
+        "y": 41.66666666666667,
+        "s": "bar2"
+      }, {
+        "x": "类目51",
+        "y": 41.80012531240646,
+        "s": "bar"
+      }, {
+        "x": "类目51",
+        "y": 41.7857343479728,
+        "s": "bar2"
+      }, {
+        "x": "类目52",
+        "y": 41.67768039516203,
+        "s": "bar"
+      }, {
+        "x": "类目52",
+        "y": 42.21136481847887,
+        "s": "bar2"
+      }, {
+        "x": "类目53",
+        "y": 41.39834040182826,
+        "s": "bar"
+      }, {
+        "x": "类目53",
+        "y": 43.01065209435119,
+        "s": "bar2"
+      }, {
+        "x": "类目54",
+        "y": 41.07625507973403,
+        "s": "bar"
+      }, {
+        "x": "类目54",
+        "y": 44.22268037417866,
+        "s": "bar2"
+      }, {
+        "x": "类目55",
+        "y": 40.833382300579814,
+        "s": "bar"
+      }, {
+        "x": "类目55",
+        "y": 45.855461823273586,
+        "s": "bar2"
+      }, {
+        "x": "类目56",
+        "y": 40.79160029175877,
+        "s": "bar"
+      }, {
+        "x": "类目56",
+        "y": 47.88469584957917,
+        "s": "bar2"
+      }, {
+        "x": "类目57",
+        "y": 41.06470032034727,
+        "s": "bar"
+      }, {
+        "x": "类目57",
+        "y": 50.25443606443524,
+        "s": "bar2"
+      }, {
+        "x": "类目58",
+        "y": 41.75070457358366,
+        "s": "bar"
+      }, {
+        "x": "类目58",
+        "y": 52.879650371477126,
+        "s": "bar2"
+      }, {
+        "x": "类目59",
+        "y": 42.924940903672564,
+        "s": "bar"
+      }, {
+        "x": "类目59",
+        "y": 55.650558977584225,
+        "s": "bar2"
+      }, {
+        "x": "类目60",
+        "y": 44.63427081999565,
+        "s": "bar"
+      }, {
+        "x": "类目60",
+        "y": 58.43853958732492,
+        "s": "bar2"
+      }, {
+        "x": "类目61",
+        "y": 46.89281122872821,
+        "s": "bar"
+      }, {
+        "x": "类目61",
+        "y": 61.10330341815434,
+        "s": "bar2"
+      }, {
+        "x": "类目62",
+        "y": 49.679416561286956,
+        "s": "bar"
+      }, {
+        "x": "类目62",
+        "y": 63.500974294013034,
+        "s": "bar2"
+      }, {
+        "x": "类目63",
+        "y": 52.93709961387478,
+        "s": "bar"
+      }, {
+        "x": "类目63",
+        "y": 65.49264961151306,
+        "s": "bar2"
+      }, {
+        "x": "类目64",
+        "y": 56.574470884754874,
+        "s": "bar"
+      }, {
+        "x": "类目64",
+        "y": 66.95298925309743,
+        "s": "bar2"
+      }, {
+        "x": "类目65",
+        "y": 60.46917221906629,
+        "s": "bar"
+      }, {
+        "x": "类目65",
+        "y": 67.77836838841961,
+        "s": "bar2"
+      }, {
+        "x": "类目66",
+        "y": 64.47317623531558,
+        "s": "bar"
+      }, {
+        "x": "类目66",
+        "y": 67.89414332224722,
+        "s": "bar2"
+      }, {
+        "x": "类目67",
+        "y": 68.41972346252496,
+        "s": "bar"
+      }, {
+        "x": "类目67",
+        "y": 67.26061575374229,
+        "s": "bar2"
+      }, {
+        "x": "类目68",
+        "y": 72.1315793340836,
+        "s": "bar"
+      }, {
+        "x": "类目68",
+        "y": 65.87733853082335,
+        "s": "bar2"
+      }, {
+        "x": "类目69",
+        "y": 75.43021771943799,
+        "s": "bar"
+      }, {
+        "x": "类目69",
+        "y": 63.785482681031894,
+        "s": "bar2"
+      }, {
+        "x": "类目70",
+        "y": 78.14548044723074,
+        "s": "bar"
+      }, {
+        "x": "类目70",
+        "y": 61.068077697490004,
+        "s": "bar2"
+      }, {
+        "x": "类目71",
+        "y": 80.12522637371026,
+        "s": "bar"
+      }, {
+        "x": "类目71",
+        "y": 57.84804048526095,
+        "s": "bar2"
+      }, {
+        "x": "类目72",
+        "y": 81.24447108408411,
+        "s": "bar"
+      }, {
+        "x": "类目72",
+        "y": 54.284018163297375,
+        "s": "bar2"
+      }, {
+        "x": "类目73",
+        "y": 81.41353029256493,
+        "s": "bar"
+      }, {
+        "x": "类目73",
+        "y": 50.564180830851214,
+        "s": "bar2"
+      }, {
+        "x": "类目74",
+        "y": 80.58471628367427,
+        "s": "bar"
+      }, {
+        "x": "类目74",
+        "y": 46.89820707575337,
+        "s": "bar2"
+      }, {
+        "x": "类目75",
+        "y": 78.75719600392792,
+        "s": "bar"
+      }, {
+        "x": "类目75",
+        "y": 43.50780217852947,
+        "s": "bar2"
+      }, {
+        "x": "类目76",
+        "y": 75.97969924353211,
+        "s": "bar"
+      }, {
+        "x": "类目76",
+        "y": 40.616171775045245,
+        "s": "bar2"
+      }, {
+        "x": "类目77",
+        "y": 72.35086229880064,
+        "s": "bar"
+      }, {
+        "x": "类目77",
+        "y": 38.4369379107128,
+        "s": "bar2"
+      }, {
+        "x": "类目78",
+        "y": 68.01710226438443,
+        "s": "bar"
+      }, {
+        "x": "类目78",
+        "y": 37.16302649485318,
+        "s": "bar2"
+      }, {
+        "x": "类目79",
+        "y": 63.16803467673056,
+        "s": "bar"
+      }, {
+        "x": "类目79",
+        "y": 36.95607267600796,
+        "s": "bar2"
+      }, {
+        "x": "类目80",
+        "y": 58.029567166714706,
+        "s": "bar"
+      }, {
+        "x": "类目80",
+        "y": 37.93688225696513,
+        "s": "bar2"
+      }, {
+        "x": "类目81",
+        "y": 52.854918421647554,
+        "s": "bar"
+      }, {
+        "x": "类目81",
+        "y": 40.17745279877072,
+        "s": "bar2"
+      }, {
+        "x": "类目82",
+        "y": 47.91391949819902,
+        "s": "bar"
+      }, {
+        "x": "类目82",
+        "y": 43.694998595987045,
+        "s": "bar2"
+      }, {
+        "x": "类目83",
+        "y": 43.48104807503482,
+        "s": "bar"
+      }, {
+        "x": "类目83",
+        "y": 48.44834150353593,
+        "s": "bar2"
+      }, {
+        "x": "类目84",
+        "y": 39.82272085822884,
+        "s": "bar"
+      }, {
+        "x": "类目84",
+        "y": 54.33692802801367,
+        "s": "bar2"
+      }, {
+        "x": "类目85",
+        "y": 37.18442111754884,
+        "s": "bar"
+      }, {
+        "x": "类目85",
+        "y": 61.20261650152743,
+        "s": "bar2"
+      }, {
+        "x": "类目86",
+        "y": 35.778264289169215,
+        "s": "bar"
+      }, {
+        "x": "类目86",
+        "y": 68.83425165632042,
+        "s": "bar2"
+      }, {
+        "x": "类目87",
+        "y": 35.77160292258658,
+        "s": "bar"
+      }, {
+        "x": "类目87",
+        "y": 76.97491319735354,
+        "s": "bar2"
+      }, {
+        "x": "类目88",
+        "y": 37.27724241244461,
+        "s": "bar"
+      }, {
+        "x": "类目88",
+        "y": 85.33159602026458,
+        "s": "bar2"
+      }, {
+        "x": "类目89",
+        "y": 40.345781666728996,
+        "s": "bar"
+      }, {
+        "x": "类目89",
+        "y": 93.58695857541488,
+        "s": "bar2"
+      }, {
+        "x": "类目90",
+        "y": 44.96051012913295,
+        "s": "bar"
+      }, {
+        "x": "类目90",
+        "y": 101.4126683297632,
+        "s": "bar2"
+      }, {
+        "x": "类目91",
+        "y": 51.035187614675685,
+        "s": "bar"
+      }, {
+        "x": "类目91",
+        "y": 108.48378461530217,
+        "s": "bar2"
+      }, {
+        "x": "类目92",
+        "y": 58.41491053964701,
+        "s": "bar"
+      }, {
+        "x": "类目92",
+        "y": 114.49355390682695,
+        "s": "bar2"
+      }, {
+        "x": "类目93",
+        "y": 66.8801325453253,
+        "s": "bar"
+      }, {
+        "x": "类目93",
+        "y": 119.16795429637915,
+        "s": "bar2"
+      }, {
+        "x": "类目94",
+        "y": 76.15376513468516,
+        "s": "bar"
+      }, {
+        "x": "类目94",
+        "y": 122.27931702317058,
+        "s": "bar2"
+      }, {
+        "x": "类目95",
+        "y": 85.91114110149952,
+        "s": "bar"
+      }, {
+        "x": "类目95",
+        "y": 123.65837448506679,
+        "s": "bar2"
+      }, {
+        "x": "类目96",
+        "y": 95.79248672571518,
+        "s": "bar"
+      }, {
+        "x": "类目96",
+        "y": 123.20413594805603,
+        "s": "bar2"
+      }, {
+        "x": "类目97",
+        "y": 105.41742429574506,
+        "s": "bar"
+      }, {
+        "x": "类目97",
+        "y": 120.89107255501017,
+        "s": "bar2"
+      }, {
+        "x": "类目98",
+        "y": 114.40092042993717,
+        "s": "bar"
+      }, {
+        "x": "类目98",
+        "y": 116.7731992576505,
+        "s": "bar2"
+      }, {
+        "x": "类目99",
+        "y": 122.37001313784816,
+        "s": "bar"
+      }, {
+        "x": "类目99",
+        "y": 110.98476877890735,
+        "s": "bar2"
+      }]
+    }
+  }
+}

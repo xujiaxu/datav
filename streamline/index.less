@@ -1,0 +1,21 @@
+.arrow-move-wrapper{
+  background-size: 100% 100% !important;
+  animation: moveArrow 2s linear infinite;
+}
+@keyframes moveArrow {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

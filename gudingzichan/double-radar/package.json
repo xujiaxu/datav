@@ -1,0 +1,168 @@
+{
+  "name": "@GW.DDJJCS/double-radar",
+  "version": "0.0.1",
+  "dependencies": {
+    "bcore": "0.0.18",
+    "echarts": "^4.7.0",
+    "jquery": "2.1.4",
+    "lodash": "4.6.1"
+  },
+  "datav": {
+    "cn_name": "double-radar",
+    "icon": "",
+    "protocol": 2,
+    "type": [
+      "regular"
+    ],
+    "view": {
+      "width": "400",
+      "height": "200",
+      "minWidth": "200",
+      "minHeight": "100"
+    },
+    "apis": {
+      "source": {
+        "handler": "render",
+        "description": "接口描述",
+        "fields": {
+          "name": {
+            "description": "名称"
+          },
+          "value1": {
+            "description": "数值"
+          },
+          "value2": {
+            "description": "数值"
+          }
+        }
+      }
+    },
+    "config": {
+      "unit": {
+        "name": "单位",
+        "type": "text",
+        "default": ""
+      },
+      "radar": {
+        "name": "雷达图",
+        "type": "group",
+        "children": {
+          "tName": {
+            "name": "标签样式",
+            "type": "group",
+            "children": {
+              "rich": {
+                "name": "富文本标签",
+                "type": "group",
+                "children": {
+                  "a": {
+                    "name": "类名",
+                    "type": "group",
+                    "children": {
+                      "fontSize": {
+                        "name": "字号",
+                        "type": "number",
+                        "default": "22.83"
+                      },
+                      "fontWeight": {
+                        "name": "粗细",
+                        "type": "text",
+                        "default": "bold"
+                      },
+                      "color": {
+                        "name": "颜色",
+                        "type": "color",
+                        "default": "#9bdef0"
+                      }
+                    }
+                  },
+                  "b": {
+                    "name": "数值",
+                    "type": "group",
+                    "children": {
+                      "fontSize": {
+                        "name": "字号",
+                        "type": "number",
+                        "default": "36.93"
+                      },
+                      "fontWeight": {
+                        "name": "粗细",
+                        "type": "text",
+                        "default": "bold"
+                      },
+                      "color": {
+                        "name": "颜色",
+                        "type": "color",
+                        "default": "#00ff3e"
+                      }
+                    }
+                  },
+                  "c": {
+                    "name": "单位",
+                    "type": "group",
+                    "children": {
+                      "fontSize": {
+                        "name": "字号",
+                        "type": "number",
+                        "default": "36.93"
+                      },
+                      "fontWeight": {
+                        "name": "粗细",
+                        "type": "text",
+                        "default": "bold"
+                      },
+                      "color": {
+                        "name": "颜色",
+                        "type": "color",
+                        "default": "#00ff3e"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "api_data": {
+      "source": [
+        {
+          "name": "电网信息化",
+          "value1": 2.38,
+          "value2": 1.27
+        },
+        {
+          "name": "电网基建",
+          "value1": 2.38,
+          "value2": 1.27
+        },
+        {
+          "name": "生产辅助技改",
+          "value1": 2.38,
+          "value2": 1.27
+        },
+        {
+          "name": "生产技改",
+          "value1": 2.38,
+          "value2": 1.27
+        },
+        {
+          "name": "零星购置",
+          "value1": 2.38,
+          "value2": 1.27
+        },
+        {
+          "name": "小型基建",
+          "value1": 2.38,
+          "value2": 1.27
+        },
+        {
+          "name": "电力营销",
+          "value1": 2.38,
+          "value2": 1.27
+        }
+      ]
+    }
+  }
+}

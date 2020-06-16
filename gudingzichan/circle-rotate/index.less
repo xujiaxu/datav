@@ -1,0 +1,32 @@
+.outer-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100% !important;
+  animation: circleRotate1 6s linear infinite;
+}
+.inner-circle {
+  position: absolute;
+  left: 5%;
+  top: 5%;
+  width: 90%;
+  height: 90%;
+  background-size: 100% 100% !important;
+  animation: circleRotate2 6s linear infinite;
+}
+@keyframes circleRotate1 {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes circleRotate2 {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}

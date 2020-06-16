@@ -1,0 +1,18 @@
+.bar-wrapper {
+  position: absolute;
+  background-size: 100% 100% !important;
+  // display: flex;
+  .item-wrap {
+    // position: absolute;
+    .item-number {
+      >span {
+        background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#fff), to(#00a2ff));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        &:first-child {
+          font-size: 89px;
+        }
+      }
+    }
+  }
+}

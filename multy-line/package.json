@@ -1,0 +1,376 @@
+{
+  "name": "@GW.DDJJCS/multy-line",
+  "version": "0.0.4",
+  "dependencies": {
+    "bcore": "0.0.18",
+    "echarts": "^4.7.0",
+    "jquery": "2.1.4",
+    "lodash": "4.6.1"
+  },
+  "datav": {
+    "cn_name": "multy-line",
+    "icon": "//datav.oss-cn-hangzhou.aliyuncs.com/uploads/images/2c1d2528903dfa80139748951f376445.png",
+    "protocol": 2,
+    "type": [
+      "regular"
+    ],
+    "view": {
+      "width": "400",
+      "height": "200",
+      "minWidth": "200",
+      "minHeight": "100"
+    },
+    "apis": {
+      "source": {
+        "handler": "render",
+        "description": "接口描述",
+        "fields": {
+          "name": {
+            "description": "x坐标轴值"
+          },
+          "value1": {
+            "description": "折线坐标轴值"
+          },
+          "value2": {
+            "description": "折线坐标轴值"
+          }
+        }
+      }
+    },
+    "config": {
+      "grid": {
+        "name": "图表间距",
+        "type": "group",
+        "fold": true,
+        "children": {
+          "top": {
+            "name": "顶部",
+            "type": "text",
+            "default": "15%"
+          },
+          "right": {
+            "name": "右侧",
+            "type": "text",
+            "default": "5%"
+          },
+          "bottom": {
+            "name": "底部",
+            "type": "text",
+            "default": "5%"
+          },
+          "left": {
+            "name": "左侧",
+            "type": "text",
+            "default": "5%"
+          }
+        }
+      },
+      "legend": {
+        "name": "图例",
+        "type": "group",
+        "children": {
+          "textStyle": {
+            "name": "文本样式",
+            "type": "group",
+            "children": {
+              "fontSize": {
+                "name": "字号",
+                "type": "number",
+                "default": 18
+              },
+              "color": {
+                "name": "颜色",
+                "type": "color",
+                "default": "#fff"
+              }
+            }
+          },
+          "right": {
+            "name": "右边距",
+            "type": "text",
+            "default": "14%"
+          }
+        },
+        "fold": true
+      },
+      "xAxis": {
+        "name": "x轴",
+        "type": "group",
+        "children": {
+          "axisLabel": {
+            "name": "刻度标签",
+            "type": "group",
+            "children": {
+              "textStyle": {
+                "name": "文本样式",
+                "type": "group",
+                "children": {
+                  "color": {
+                    "name": "颜色",
+                    "type": "color",
+                    "default": "#fff"
+                  },
+                  "fontWeight": {
+                    "name": "字体粗细",
+                    "type": "text",
+                    "default": "bold"
+                  },
+                  "fontSize": {
+                    "name": "字号",
+                    "type": "number",
+                    "default": 20
+                  }
+                },
+                "fold": true
+              },
+              "margin": {
+                "name": "数字边距",
+                "type": "number",
+                "default": 28
+              }
+            }
+          },
+          "axisLine": {
+            "name": "轴线",
+            "type": "group",
+            "children": {
+              "lineStyle": {
+                "name": "轴线样式",
+                "type": "group",
+                "children": {
+                  "width": {
+                    "name": "宽度",
+                    "type": "number",
+                    "default": 2
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "yAxis": {
+        "name": "y轴",
+        "type": "group",
+        "children": {
+          "nameTextStyle": {
+            "name": "名称样式",
+            "type": "group",
+            "children": {
+              "color": {
+                "name": "颜色",
+                "type": "color",
+                "default": "#fff"
+              },
+              "fontWeight": {
+                "name": "字体粗细",
+                "type": "text",
+                "default": "bold"
+              },
+              "fontFamily": {
+                "name": "字体",
+                "type": "text",
+                "default": "sans-serif"
+              },
+              "fontSize": {
+                "name": "字号",
+                "type": "number",
+                "default": 20
+              }
+            },
+            "fold": true
+          },
+          "axisLabel": {
+            "name": "刻度标签",
+            "type": "group",
+            "children": {
+              "textStyle": {
+                "name": "文本样式",
+                "type": "group",
+                "children": {
+                  "color": {
+                    "name": "颜色",
+                    "type": "color",
+                    "default": "#fff"
+                  },
+                  "fontWeight": {
+                    "name": "字体粗细",
+                    "type": "text",
+                    "default": "normal"
+                  },
+                  "fontSize": {
+                    "name": "字号",
+                    "type": "number",
+                    "default": 25
+                  }
+                },
+                "fold": true
+              },
+              "margin": {
+                "name": "数字边距",
+                "type": "number",
+                "default": 25
+              }
+            }
+          },
+          "axisLine": {
+            "name": "轴线",
+            "type": "group",
+            "children": {
+              "lineStyle": {
+                "name": "轴线样式",
+                "type": "group",
+                "children": {
+                  "width": {
+                    "name": "宽度",
+                    "type": "number",
+                    "default": 2
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "api_data": {
+      "source": [
+        {
+          "name": "北京",
+          "value1": 90,
+          "value2": 110
+        },
+        {
+          "name": "天津",
+          "value1": 70,
+          "value2": 80
+        },
+        {
+          "name": "河北",
+          "value1": 110,
+          "value2": 80
+        },
+        {
+          "name": "山东",
+          "value1": 80,
+          "value2": 90
+        },
+        {
+          "name": "山西",
+          "value1": 110,
+          "value2": 80
+        },
+        {
+          "name": "河南",
+          "value1": 130,
+          "value2": 90
+        },
+        {
+          "name": "安徽",
+          "value1": 100,
+          "value2": 70
+        },
+        {
+          "name": "江苏",
+          "value1": 50,
+          "value2": 60
+        },
+        {
+          "name": "湖南",
+          "value1": 80,
+          "value2": 120
+        },
+        {
+          "name": "湖北",
+          "value1": 120,
+          "value2": 60
+        },
+        {
+          "name": "上海",
+          "value1": 65,
+          "value2": 43
+        },
+        {
+          "name": "陕西",
+          "value1": 90,
+          "value2": 64
+        },
+        {
+          "name": "江西",
+          "value1": 80,
+          "value2": 47
+        },
+        {
+          "name": "甘肃",
+          "value1": 57,
+          "value2": 132
+        },
+        {
+          "name": "新疆",
+          "value1": 48,
+          "value2": 87
+        },
+        {
+          "name": "内蒙古",
+          "value1": 104,
+          "value2": 80
+        },
+        {
+          "name": "辽宁",
+          "value1": 87,
+          "value2": 140
+        },
+        {
+          "name": "黑龙江",
+          "value1": 152,
+          "value2": 120
+        },
+        {
+          "name": "吉林",
+          "value1": 90,
+          "value2": 100
+        },
+        {
+          "name": "四川",
+          "value1": 94,
+          "value2": 127
+        },
+        {
+          "name": "重庆",
+          "value1": 85,
+          "value2": 93
+        },
+        {
+          "name": "浙江",
+          "value1": 100,
+          "value2": 120
+        },
+        {
+          "name": "江苏",
+          "value1": 80,
+          "value2": 60
+        },
+        {
+          "name": "青海",
+          "value1": 50,
+          "value2": 70
+        },
+        {
+          "name": "西藏",
+          "value1": 100,
+          "value2": 90
+        },
+        {
+          "name": "广东",
+          "value1": 50,
+          "value2": 70
+        },
+        {
+          "name": "福建",
+          "value1": 80,
+          "value2": 100
+        }
+      ]
+    }
+  }
+}

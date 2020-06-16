@@ -1,0 +1,78 @@
+{
+  "name": "@GW.DDJJCS/high-chart",
+  "version": "0.1.11",
+  "dependencies": {
+    "bcore": "0.0.18",
+    "highcharts": "^8.0.4",
+    "jquery": "2.1.4",
+    "lodash": "4.6.1"
+  },
+  "datav": {
+    "cn_name": "hight-chart",
+    "icon": "//datav.oss-cn-hangzhou.aliyuncs.com/uploads/images/be884ef1a68c0b3a3865a24ed0a847bc.png",
+    "protocol": 2,
+    "type": [
+      "regular"
+    ],
+    "view": {
+      "width": "400",
+      "height": "200",
+      "minWidth": "200",
+      "minHeight": "100"
+    },
+    "apis": {
+      "source": {
+        "handler": "render",
+        "description": "接口描述",
+        "fields": {
+          "name": {
+            "description": "类名"
+          },
+          "y": {
+            "description": "值说明"
+          }
+        }
+      }
+    },
+    "config": {
+      "size": {
+        "name": "字号",
+        "type": "number",
+        "default": 20
+      },
+      "pieSize": {
+        "name": "饼图大小",
+        "type": "text",
+        "default": "60%"
+      }
+    },
+    "api_data": {
+      "source": [
+        {
+          "name": "客户内部故障",
+          "y": 938
+        },
+        {
+          "name": "计算故障",
+          "y": 726
+        },
+        {
+          "name": "电能质量故障",
+          "y": 549
+        },
+        {
+          "name": "非电力故障",
+          "y": 1029
+        },
+        {
+          "name": "高压故障",
+          "y": 756
+        },
+        {
+          "name": "低压故障",
+          "y": 905
+        }
+      ]
+    }
+  }
+}

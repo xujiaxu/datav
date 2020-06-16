@@ -1,0 +1,48 @@
+{
+  "name": "@GW.DDJJCS/streamline",
+  "version": "0.0.2",
+  "dependencies": {
+    "bcore": "0.0.18",
+    "jquery": "2.1.4",
+    "lodash": "4.6.1"
+  },
+  "datav": {
+    "cn_name": "streamline",
+    "icon": "//datav.oss-cn-hangzhou.aliyuncs.com/uploads/images/179c7d0698adc7cbb73b2aac7c93c332.png",
+    "protocol": 2,
+    "type": [
+      "regular"
+    ],
+    "view": {
+      "width": "400",
+      "height": "200",
+      "minWidth": "200",
+      "minHeight": "100"
+    },
+    "apis": {
+      "source": {
+        "handler": "render",
+        "description": "接口描述",
+        "fields": {
+          "value": {
+            "description": "值说明"
+          }
+        }
+      }
+    },
+    "config": {
+      "image": {
+        "name": "动效图片",
+        "type": "image",
+        "default": "//datav.oss-cn-hangzhou.aliyuncs.com/uploads/images/179c7d0698adc7cbb73b2aac7c93c332.png"
+      }
+    },
+    "api_data": {
+      "source": [
+        {
+          "value": "值"
+        }
+      ]
+    }
+  }
+}

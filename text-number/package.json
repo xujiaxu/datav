@@ -1,0 +1,64 @@
+{
+  "name": "@GW.DDJJCS/text-number",
+  "version": "0.0.3",
+  "dependencies": {
+    "bcore": "0.0.18",
+    "jquery": "2.1.4",
+    "lodash": "4.6.1"
+  },
+  "datav": {
+    "cn_name": "text-number",
+    "icon": "//datav.oss-cn-hangzhou.aliyuncs.com/uploads/images/120a74bd41ca0e9b20a3089aafc7b976.png",
+    "protocol": 2,
+    "type": [
+      "regular"
+    ],
+    "view": {
+      "width": "400",
+      "height": "200",
+      "minWidth": "200",
+      "minHeight": "100"
+    },
+    "apis": {
+      "source": {
+        "handler": "render",
+        "description": "接口描述",
+        "fields": {
+          "value1": {
+            "description": "值说明"
+          },
+          "value2": {
+            "description": "值说明"
+          }
+        }
+      }
+    },
+    "config": {
+      "size": {
+        "name": "字号",
+        "type": "number",
+        "default": 18,
+        "range": [
+          10,
+          100
+        ]
+      },
+      "fontWeight": {
+        "name": "粗细",
+        "type": "text",
+        "default": "bold"
+      },
+      "color": {
+        "name": "字体颜色",
+        "type": "color",
+        "default": "#fdd100"
+      }
+    },
+    "api_data": {
+      "source": {
+        "value1": 2.38,
+        "value2": 1.27
+      }
+    }
+  }
+}

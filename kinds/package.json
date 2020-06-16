@@ -1,0 +1,274 @@
+{
+  "name": "@namespace/kinds",
+  "version": "0.0.1",
+  "dependencies": {
+    "bcore": "0.0.18",
+    "jquery": "2.1.4",
+    "lodash": "4.6.1"
+  },
+  "datav": {
+    "cn_name": "kinds",
+    "icon": "",
+    "protocol": 2,
+    "type": [
+      "regular"
+    ],
+    "view": {
+      "width": "400",
+      "height": "200",
+      "minWidth": "200",
+      "minHeight": "100"
+    },
+    "apis": {
+      "source": {
+        "handler": "render",
+        "description": "接口描述",
+        "fields": {
+          "year": {
+            "description": "年份"
+          },
+          "value": {
+            "description": "数值"
+          },
+          "unit": {
+            "description": "项"
+          }
+        }
+      }
+    },
+    "config": {
+      "numberFont": {
+        "name": "数值字体",
+        "type": "group",
+        "handler": "updateNumber",
+        "children": {
+          "textSize": {
+            "name": "字体大小",
+            "type": "number",
+            "default": 36,
+            "range": [
+              0,
+              100
+            ],
+            "step": 1,
+            "handler": "updateNumber"
+          },
+          "fontFamily": {
+            "name": "字体",
+            "type": "select",
+            "options": [
+              {
+                "name": "微软雅黑",
+                "value": "Microsoft YaHei"
+              },
+              {
+                "name": "宋体",
+                "value": "SimSuncss"
+              },
+              {
+                "name": "黑体",
+                "value": "SimHei"
+              },
+              {
+                "name": "隶书",
+                "value": "LiSu"
+              },
+              {
+                "name": "幼圆",
+                "value": "YouYuan"
+              },
+              {
+                "name": "tahoma",
+                "value": "Tahoma"
+              },
+              {
+                "name": "arial",
+                "value": "Arial"
+              },
+              {
+                "name": "sans-serif",
+                "value": "sans-serif"
+              },
+              {
+                "name": "serif",
+                "value": "serif"
+              },
+              {
+                "name": "digital",
+                "value": "DS-Digital"
+              }
+            ],
+            "default": "DS-Digital",
+            "handler": "updateNumber"
+          }
+        }
+      },
+      "unitSize": {
+        "name": "单位字号",
+        "type": "group",
+        "handler": "updateUnit",
+        "children": {
+          "textSize": {
+            "name": "字体大小",
+            "type": "number",
+            "default": 36,
+            "range": [
+              0,
+              100
+            ],
+            "step": 1,
+            "handler": "updateUnit"
+          },
+          "color": {
+            "name": "字体颜色",
+            "type": "color",
+            "default": "#fff"
+          },
+          "fontFamily": {
+            "name": "字体",
+            "type": "select",
+            "options": [
+              {
+                "name": "微软雅黑",
+                "value": "Microsoft YaHei"
+              },
+              {
+                "name": "宋体",
+                "value": "SimSuncss"
+              },
+              {
+                "name": "黑体",
+                "value": "SimHei"
+              },
+              {
+                "name": "隶书",
+                "value": "LiSu"
+              },
+              {
+                "name": "幼圆",
+                "value": "YouYuan"
+              },
+              {
+                "name": "tahoma",
+                "value": "Tahoma"
+              },
+              {
+                "name": "arial",
+                "value": "Arial"
+              },
+              {
+                "name": "sans-serif",
+                "value": "sans-serif"
+              },
+              {
+                "name": "serif",
+                "value": "serif"
+              },
+              {
+                "name": "digital",
+                "value": "DS-Digital"
+              }
+            ],
+            "default": "Microsoft YaHei",
+            "handler": "updateUnit"
+          }
+        }
+      },
+      "yearSize": {
+        "name": "年份字号",
+        "type": "group",
+        "handler": "updateYear",
+        "children": {
+          "textSize": {
+            "name": "字体大小",
+            "type": "number",
+            "default": 36,
+            "range": [
+              0,
+              100
+            ],
+            "step": 1,
+            "handler": "updateYear"
+          },
+          "color": {
+            "name": "字体颜色",
+            "type": "color",
+            "default": "#fff"
+          },
+          "fontFamily": {
+            "name": "字体",
+            "type": "select",
+            "options": [
+              {
+                "name": "微软雅黑",
+                "value": "Microsoft YaHei"
+              },
+              {
+                "name": "宋体",
+                "value": "SimSuncss"
+              },
+              {
+                "name": "黑体",
+                "value": "SimHei"
+              },
+              {
+                "name": "隶书",
+                "value": "LiSu"
+              },
+              {
+                "name": "幼圆",
+                "value": "YouYuan"
+              },
+              {
+                "name": "tahoma",
+                "value": "Tahoma"
+              },
+              {
+                "name": "arial",
+                "value": "Arial"
+              },
+              {
+                "name": "sans-serif",
+                "value": "sans-serif"
+              },
+              {
+                "name": "serif",
+                "value": "serif"
+              },
+              {
+                "name": "digital",
+                "value": "DS-Digital"
+              }
+            ],
+            "default": "DS-Digital",
+            "handler": "updateYear"
+          }
+        }
+      },
+      "image": {
+        "name": "背景图",
+        "type": "image",
+        "default": "./img/kind-bg.png"
+      }
+    },
+    "api_data": {
+      "source": [
+        {
+          "year": 2018,
+          "value": 18,
+          "unit": "项"
+        },
+        {
+          "year": 2019,
+          "value": 15,
+          "unit": "项"
+        },
+        {
+          "year": 2020,
+          "value": 13,
+          "unit": "项"
+        }
+      ]
+    }
+  }
+}

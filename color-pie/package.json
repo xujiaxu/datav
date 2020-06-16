@@ -1,0 +1,344 @@
+{
+  "name": "@GW.DDJJCS/color-pie",
+  "version": "0.0.9",
+  "dependencies": {
+    "bcore": "0.0.18",
+    "echarts": "^4.6.0",
+    "jquery": "2.1.4",
+    "lodash": "4.6.1"
+  },
+  "datav": {
+    "cn_name": "color-pie",
+    "icon": "//datav.oss-cn-hangzhou.aliyuncs.com/uploads/images/b7ffd2c2a7e6d465f239a7b90bf6463b.png",
+    "protocol": 2,
+    "type": [
+      "regular"
+    ],
+    "view": {
+      "width": "400",
+      "height": "200",
+      "minWidth": "200",
+      "minHeight": "100"
+    },
+    "apis": {
+      "source": {
+        "handler": "render",
+        "description": "接口描述",
+        "fields": {
+          "name": {
+            "description": "类名"
+          },
+          "value": {
+            "description": "值说明"
+          }
+        }
+      }
+    },
+    "config": {
+      "graphic": {
+        "name": "嵌入背景图",
+        "type": "group",
+        "children": {
+          "elements": {
+            "name": "元素",
+            "type": "array",
+            "default": [
+              {
+                "shape": {
+                  "name": "形状",
+                  "type": "group",
+                  "children": {
+                    "r": {
+                      "name": "半径",
+                      "type": "number",
+                      "default": 60
+                    }
+                  }
+                }
+              }
+            ],
+            "child": {
+              "type": "object",
+              "name": "系列",
+              "child": {
+                "shape": {
+                  "name": "形状",
+                  "type": "group",
+                  "children": {
+                    "r": {
+                      "name": "半径",
+                      "type": "number",
+                      "default": 70
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "title": {
+        "name": "标题",
+        "type": "group",
+        "children": {
+          "y": {
+            "name": "纵向位置",
+            "type": "text",
+            "default": "45%"
+          },
+          "textStyle": {
+            "name": "标题样式",
+            "type": "group",
+            "children": {
+              "rich": {
+                "name": "富文本",
+                "type": "group",
+                "children": {
+                  "a": {
+                    "name": "数值样式",
+                    "type": "group",
+                    "children": {
+                      "color": {
+                        "name": "颜色",
+                        "type": "color",
+                        "default": "#fff"
+                      },
+                      "fontSize": {
+                        "name": "字号",
+                        "type": "number",
+                        "default": 36
+                      },
+                      "fontWeight": {
+                        "name": "粗细",
+                        "type": "text",
+                        "default": "bold"
+                      },
+                      "padding": {
+                        "name": "字号",
+                        "type": "number",
+                        "default": 0
+                      }
+                    }
+                  },
+                  "b": {
+                    "name": "数值样式",
+                    "type": "group",
+                    "children": {
+                      "color": {
+                        "name": "颜色",
+                        "type": "color",
+                        "default": "#fff"
+                      },
+                      "fontSize": {
+                        "name": "字号",
+                        "type": "number",
+                        "default": 12
+                      },
+                      "fontWeight": {
+                        "name": "粗细",
+                        "type": "text",
+                        "default": "bold"
+                      },
+                      "padding": {
+                        "name": "字号",
+                        "type": "number",
+                        "default": 4
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "subtextStyle": {
+            "name": "副标题样式",
+            "type": "group",
+            "children": {
+              "fontSize": {
+                "name": "字号",
+                "type": "number",
+                "default": 16.37
+              },
+              "fontWeight": {
+                "name": "粗细",
+                "type": "text",
+                "default": "bold"
+              },
+              "color": {
+                "name": "颜色",
+                "type": "color",
+                "default": "#fff"
+              }
+            }
+          }
+        }
+      },
+      "series": {
+        "name": "饼图样式",
+        "type": "group",
+        "children": {
+          "radius": {
+            "name": "饼图大小",
+            "type": "array",
+            "default": [
+              {
+                "rValue": "40%"
+              },
+              {
+                "rValue": "50%"
+              }
+            ],
+            "child": {
+              "type": "object",
+              "name": "系列<%=i+1%>",
+              "child": {
+                "rValue": {
+                  "name": "半径",
+                  "type": "text",
+                  "default": "40%"
+                }
+              }
+            }
+          },
+          "label": {
+            "name": "标签",
+            "type": "group",
+            "children": {
+              "rich": {
+                "name": "富文本",
+                "type": "group",
+                "children": {
+                  "a": {
+                    "name": "百分号样式",
+                    "type": "group",
+                    "children": {
+                      "color": {
+                        "name": "颜色",
+                        "type": "color",
+                        "default": "#8ee6ff"
+                      },
+                      "fontSize": {
+                        "name": "字号",
+                        "type": "number",
+                        "default": 15
+                      },
+                      "fontWeight": {
+                        "name": "粗细",
+                        "type": "text",
+                        "default": "bold"
+                      },
+                      "padding": {
+                        "name": "间距",
+                        "type": "number",
+                        "default": 0
+                      }
+                    }
+                  },
+                  "b": {
+                    "name": "分钟样式",
+                    "type": "group",
+                    "children": {
+                      "color": {
+                        "name": "颜色",
+                        "type": "color",
+                        "default": "#8ee6ff"
+                      },
+                      "fontSize": {
+                        "name": "字号",
+                        "type": "number",
+                        "default": 15
+                      },
+                      "fontWeight": {
+                        "name": "粗细",
+                        "type": "text",
+                        "default": "bold"
+                      },
+                      "padding": {
+                        "name": "间距",
+                        "type": "number",
+                        "default": 4
+                      }
+                    }
+                  },
+                  "c": {
+                    "name": "数值样式",
+                    "type": "group",
+                    "children": {
+                      "color": {
+                        "name": "颜色",
+                        "type": "color",
+                        "default": "#8ee6ff"
+                      },
+                      "fontSize": {
+                        "name": "字号",
+                        "type": "number",
+                        "default": 24.56
+                      },
+                      "fontWeight": {
+                        "name": "粗细",
+                        "type": "text",
+                        "default": "bold"
+                      },
+                      "padding": {
+                        "name": "间距",
+                        "type": "number",
+                        "default": 6
+                      }
+                    }
+                  },
+                  "d": {
+                    "name": "数值百分值",
+                    "type": "group",
+                    "children": {
+                      "color": {
+                        "name": "颜色",
+                        "type": "color",
+                        "default": "#8ee6ff"
+                      },
+                      "fontSize": {
+                        "name": "字号",
+                        "type": "number",
+                        "default": 28.66
+                      },
+                      "fontWeight": {
+                        "name": "粗细",
+                        "type": "text",
+                        "default": "bold"
+                      },
+                      "padding": {
+                        "name": "间距",
+                        "type": "number",
+                        "default": 4
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            
+          }
+        }
+      }
+    },
+    "api_data": {
+      "source": [
+        {
+          "name": "业务受理",
+          "value": 122
+        },
+        {
+          "name": "供电负荷",
+          "value": 143
+        },
+        {
+          "name": "外部工程施工",
+          "value": 52
+        },
+        {
+          "name": "装表接电",
+          "value": 56
+        }
+      ]
+    }
+  }
+}

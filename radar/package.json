@@ -1,0 +1,158 @@
+{
+  "name": "@GW.DDJJCS/radar",
+  "version": "0.0.6",
+  "dependencies": {
+    "bcore": "0.0.18",
+    "echarts": "^4.6.0",
+    "jquery": "2.1.4",
+    "lodash": "4.6.1"
+  },
+  "datav": {
+    "cn_name": "radar",
+    "icon": "//datav.oss-cn-hangzhou.aliyuncs.com/uploads/images/20372b6c9e42e2583492c291564b14d7.png",
+    "protocol": 2,
+    "type": [
+      "regular"
+    ],
+    "view": {
+      "width": "400",
+      "height": "200",
+      "minWidth": "200",
+      "minHeight": "100"
+    },
+    "apis": {
+      "source": {
+        "handler": "render",
+        "description": "接口描述",
+        "fields": {
+          "name": {
+            "description": "名称"
+          },
+          "value": {
+            "description": "数值"
+          }
+        }
+      }
+    },
+    "config": {
+      "unit": {
+        "name": "单位",
+        "type": "text",
+        "default": ""
+      },
+      "radar": {
+        "name": "雷达图",
+        "type": "group",
+        "children": {
+          "tName": {
+            "name": "标签样式",
+            "type": "group",
+            "children": {
+              "rich": {
+                "name": "富文本标签",
+                "type": "group",
+                "children": {
+                  "a": {
+                    "name": "类名",
+                    "type": "group",
+                    "children": {
+                      "fontSize": {
+                        "name": "字号",
+                        "type": "number",
+                        "default": "22.83"
+                      },
+                      "fontWeight": {
+                        "name": "粗细",
+                        "type": "text",
+                        "default": "bold"
+                      },
+                      "color": {
+                        "name": "颜色",
+                        "type": "color",
+                        "default": "#9bdef0"
+                      }
+                    }
+                  },
+                  "b": {
+                    "name": "数值",
+                    "type": "group",
+                    "children": {
+                      "fontSize": {
+                        "name": "字号",
+                        "type": "number",
+                        "default": "36.93"
+                      },
+                      "fontWeight": {
+                        "name": "粗细",
+                        "type": "text",
+                        "default": "bold"
+                      },
+                      "color": {
+                        "name": "颜色",
+                        "type": "color",
+                        "default": "#00ff3e"
+                      }
+                    }
+                  },
+                  "c": {
+                    "name": "单位",
+                    "type": "group",
+                    "children": {
+                      "fontSize": {
+                        "name": "字号",
+                        "type": "number",
+                        "default": "36.93"
+                      },
+                      "fontWeight": {
+                        "name": "粗细",
+                        "type": "text",
+                        "default": "bold"
+                      },
+                      "color": {
+                        "name": "颜色",
+                        "type": "color",
+                        "default": "#00ff3e"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "api_data": {
+      "source": [
+        {
+          "name": "大工业用电",
+          "value": 0.6831
+        },
+        {
+          "name": "打水用电",
+          "value": 0.7052
+        },
+        {
+          "name": "其他用电",
+          "value": 0.7407
+        },
+        {
+          "name": "一般工商业及其他",
+          "value": 0.785
+        },
+        {
+          "name": "趸售用电",
+          "value": 0.6606
+        },
+        {
+          "name": "居民用电",
+          "value": 0.6573
+        },
+        {
+          "name": "农业用电",
+          "value": 0.763
+        }
+      ]
+    }
+  }
+}

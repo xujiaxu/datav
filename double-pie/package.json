@@ -1,0 +1,178 @@
+{
+  "name": "@GW.DDJJCS/double-pie",
+  "version": "0.0.2",
+  "dependencies": {
+    "bcore": "0.0.18",
+    "echarts": "^4.6.0",
+    "jquery": "2.1.4",
+    "lodash": "4.6.1"
+  },
+  "datav": {
+    "cn_name": "double-pie",
+    "icon": "//datav.oss-cn-hangzhou.aliyuncs.com/uploads/images/5b35f19c0a22abb1633c60ac658c1aaf.png",
+    "protocol": 2,
+    "type": [
+      "regular"
+    ],
+    "view": {
+      "width": "400",
+      "height": "200",
+      "minWidth": "200",
+      "minHeight": "100"
+    },
+    "apis": {
+      "source": {
+        "handler": "render",
+        "description": "接口描述",
+        "fields": {
+          "name": {
+            "description": "类名"
+          },
+          "value": {
+            "description": "数值"
+          }
+        }
+      }
+    },
+    "config": {
+       "title": {
+        "name": "标题",
+        "type": "group",
+        "children": {
+          "y": {
+            "name": "纵向位置",
+            "type": "text",
+            "default": "45%"
+          },
+          "textStyle": {
+            "name": "标题样式",
+            "type": "group",
+            "children": {
+              "rich": {
+                "name": "富文本",
+                "type": "group",
+                "children": {
+                  "a": {
+                    "name": "数值样式",
+                    "type": "group",
+                    "children": {
+                      "color": {
+                        "name": "颜色",
+                        "type": "color",
+                        "default": "#fff"
+                      },
+                      "fontSize": {
+                        "name": "字号",
+                        "type": "number",
+                        "default": 36
+                      },
+                      "fontWeight": {
+                        "name": "粗细",
+                        "type": "text",
+                        "default": "bold"
+                      },
+                      "padding": {
+                        "name": "字号",
+                        "type": "number",
+                        "default": 0
+                      }
+                    }
+                  },
+                  "b": {
+                    "name": "单位样式",
+                    "type": "group",
+                    "children": {
+                      "color": {
+                        "name": "颜色",
+                        "type": "color",
+                        "default": "#fff"
+                      },
+                      "fontSize": {
+                        "name": "字号",
+                        "type": "number",
+                        "default": 14
+                      },
+                      "fontWeight": {
+                        "name": "粗细",
+                        "type": "text",
+                        "default": "bold"
+                      },
+                      "padding": {
+                        "name": "字号",
+                        "type": "number",
+                        "default": 4
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "series": {
+        "name": "饼图样式",
+        "type": "array",
+        "default": [
+          {
+            "name": "pie1",
+            "type": "pie",
+            "radius": [
+              {
+                "rValue": "45%"
+              },
+              {
+                "rValue": "55%"
+              }
+            ]
+          },
+          {
+            "name": "pie2",
+            "type": "pie",
+            "radius": [
+              {
+                "rValue": "40%"
+              },
+              {
+                "rValue": "45%"
+              }
+            ]
+          }
+        ],
+        "child": {
+          "type": "object",
+          "name": "系列<%=i+1%>",
+          "child": {
+            "radius": {
+              "name": "半径",
+              "type": "array",
+              "child": {
+                "type": "object",
+                "name": "半径<%=i+1%>",
+                "child": {
+                  "rValue": {
+                    "name": "半径",
+                    "type": "text",
+                    "default": "40%"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "api_data": {
+      "source": [
+        {
+          "name": "受理用数",
+          "value": 3245
+        },
+        {
+          "name": "接电用数",
+          "value": 2197
+        }
+      ]
+    }
+  }
+}

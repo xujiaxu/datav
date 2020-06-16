@@ -1,0 +1,270 @@
+{
+  "name": "@GW.DDJJCS/rose",
+  "version": "0.0.7",
+  "dependencies": {
+    "bcore": "0.0.18",
+    "echarts": "^4.7.0",
+    "jquery": "2.1.4",
+    "lodash": "4.6.1"
+  },
+  "datav": {
+    "cn_name": "rose",
+    "icon": "//datav.oss-cn-hangzhou.aliyuncs.com/uploads/images/a3ec5ee6ff1a86d3f8e1ebbbf92fcaf1.png",
+    "protocol": 2,
+    "type": [
+      "regular"
+    ],
+    "view": {
+      "width": "800",
+      "height": "600",
+      "minWidth": "200",
+      "minHeight": "100"
+    },
+    "apis": {
+      "source": {
+        "handler": "render",
+        "description": "接口描述",
+        "fields": {
+          "value": {
+            "description": "值说明"
+          }
+        }
+      }
+    },
+    "config": {
+      "dot1": {
+        "name": "圆点1",
+        "type": "image",
+        "default": "//datav.oss-cn-hangzhou.aliyuncs.com/uploads/images/1c8b76f2431160345363747062906554.png"
+      },
+      "dot2": {
+        "name": "圆点2",
+        "type": "image",
+        "default": "//datav.oss-cn-hangzhou.aliyuncs.com/uploads/images/ded2919e8e1107d75f207bd3e63fd361.png"
+      },
+      "legend": {
+        "name": "图例",
+        "type": "group",
+        "children": {
+          "textStyle": {
+            "name": "文本样式",
+            "type": "group",
+            "children": {
+              "fontSize": {
+                "name": "字号",
+                "type": "number",
+                "default": 20
+              },
+              "color": {
+                "name": "颜色",
+                "type": "color",
+                "default": "#fff"
+              }
+            }
+          },
+          "right": {
+            "name": "右边距",
+            "type": "text",
+            "default": "0%"
+          }
+        },
+        "fold": true
+      },
+      "series": {
+        "name": "饼图样式",
+        "type": "group",
+        "children": {
+          "radius": {
+            "name": "饼图大小",
+            "type": "text",
+            "default": "45%"
+          },
+          "label": {
+            "name": "标签",
+            "type": "group",
+            "children": {
+              "rich": {
+                "name": "富文本",
+                "type": "group",
+                "children": {
+                  "a": {
+                    "name": "百分号样式",
+                    "type": "group",
+                    "children": {
+                      "color": {
+                        "name": "颜色",
+                        "type": "color",
+                        "default": "#8ee6ff"
+                      },
+                      "fontSize": {
+                        "name": "字号",
+                        "type": "number",
+                        "default": 17
+                      },
+                      "fontWeight": {
+                        "name": "粗细",
+                        "type": "text",
+                        "default": "bold"
+                      },
+                      "padding": {
+                        "name": "间距",
+                        "type": "number",
+                        "default": 0
+                      }
+                    }
+                  },
+                  "b": {
+                    "name": "单位样式",
+                    "type": "group",
+                    "children": {
+                      "color": {
+                        "name": "颜色",
+                        "type": "color",
+                        "default": "#8ee6ff"
+                      },
+                      "fontSize": {
+                        "name": "字号",
+                        "type": "number",
+                        "default": 17
+                      },
+                      "fontWeight": {
+                        "name": "粗细",
+                        "type": "text",
+                        "default": "bold"
+                      },
+                      "padding": {
+                        "name": "间距",
+                        "type": "number",
+                        "default": 4
+                      }
+                    }
+                  },
+                  "c": {
+                    "name": "数值样式",
+                    "type": "group",
+                    "children": {
+                      "color": {
+                        "name": "颜色",
+                        "type": "color",
+                        "default": "#8ee6ff"
+                      },
+                      "fontSize": {
+                        "name": "字号",
+                        "type": "number",
+                        "default": 30.5
+                      },
+                      "fontWeight": {
+                        "name": "粗细",
+                        "type": "text",
+                        "default": "bold"
+                      },
+                      "padding": {
+                        "name": "间距",
+                        "type": "number",
+                        "default": 6
+                      }
+                    }
+                  },
+                  "d": {
+                    "name": "数值百分值",
+                    "type": "group",
+                    "children": {
+                      "color": {
+                        "name": "颜色",
+                        "type": "color",
+                        "default": "#8ee6ff"
+                      },
+                      "fontSize": {
+                        "name": "字号",
+                        "type": "number",
+                        "default": 30.5
+                      },
+                      "fontWeight": {
+                        "name": "粗细",
+                        "type": "text",
+                        "default": "bold"
+                      },
+                      "padding": {
+                        "name": "间距",
+                        "type": "number",
+                        "default": 4
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "api_data": {
+      "source": {
+        "data1": [
+          {
+            "name": "大工业用电",
+            "value": 45
+          },
+          {
+            "name": "农业用电",
+            "value": 83
+          },
+          {
+            "name": "居民用电",
+            "value": 52
+          },
+          {
+            "name": "趸售用电",
+            "value": 56
+          },
+          {
+            "name": "其他用电",
+            "value": 52
+          },
+          {
+            "name": "一般工商业及其他用电",
+            "value": 56
+          },
+          {
+            "name": "打水用电",
+            "value": 36
+          }
+        ],
+        "data2": [
+          {
+            "name": "租赁和商务服务业",
+            "value": 65
+          },
+          {
+            "name": "金融业",
+            "value": 73
+          },
+          {
+            "name": "建筑业",
+            "value": 52
+          },
+          {
+            "name": "住宿和餐饮业",
+            "value": 48
+          },
+          {
+            "name": "批发和零售业",
+            "value": 52
+          },
+          {
+            "name": "房地产业",
+            "value": 36
+          },
+          {
+            "name": "工业",
+            "value": 52
+          },
+          {
+            "name": "其他",
+            "value": 26
+          }
+        ]
+      }
+    }
+  }
+}

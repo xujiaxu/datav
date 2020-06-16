@@ -1,0 +1,273 @@
+{
+  "name": "@GW.DDJJCS/scatter",
+  "version": "0.0.8",
+  "dependencies": {
+    "bcore": "0.0.18",
+    "echarts": "^4.7.0",
+    "jquery": "2.1.4",
+    "lodash": "4.6.1"
+  },
+  "datav": {
+    "cn_name": "scatter",
+    "icon": "//datav.oss-cn-hangzhou.aliyuncs.com/uploads/images/93f5cbbdd6039d3e1e00cb39def22004.png",
+    "protocol": 2,
+    "type": [
+      "regular"
+    ],
+    "view": {
+      "width": "400",
+      "height": "200",
+      "minWidth": "200",
+      "minHeight": "100"
+    },
+    "apis": {
+      "source": {
+        "handler": "render",
+        "description": "接口描述",
+        "fields": {
+          "value": {
+            "description": "值说明"
+          }
+        }
+      }
+    },
+    "config": {
+      "grid": {
+        "name": "图表间距",
+        "type": "group",
+        "fold": true,
+        "children": {
+          "top": {
+            "name": "顶部",
+            "type": "text",
+            "default": "15%"
+          },
+          "right": {
+            "name": "右侧",
+            "type": "text",
+            "default": "5%"
+          },
+          "bottom": {
+            "name": "底部",
+            "type": "text",
+            "default": "5%"
+          },
+          "left": {
+            "name": "左侧",
+            "type": "text",
+            "default": "5%"
+          }
+        }
+      },
+      "legend": {
+        "name": "图例",
+        "type": "group",
+        "children": {
+          "textStyle": {
+            "name": "文本样式",
+            "type": "group",
+            "children": {
+              "fontSize": {
+                "name": "字号",
+                "type": "number",
+                "default": 20
+              },
+              "color": {
+                "name": "颜色",
+                "type": "color",
+                "default": "#fff"
+              }
+            }
+          },
+          "right": {
+            "name": "右边距",
+            "type": "text",
+            "default": "14%"
+          }
+        },
+        "fold": true
+      },
+      "xAxis": {
+        "name": "x轴",
+        "type": "group",
+        "children": {
+          "axisLabel": {
+            "name": "刻度标签",
+            "type": "group",
+            "children": {
+              "textStyle": {
+                "name": "文本样式",
+                "type": "group",
+                "children": {
+                  "color": {
+                    "name": "颜色",
+                    "type": "color",
+                    "default": "#fff"
+                  },
+                  "fontWeight": {
+                    "name": "字体粗细",
+                    "type": "text",
+                    "default": "bold"
+                  },
+                  "fontSize": {
+                    "name": "字号",
+                    "type": "number",
+                    "default": 20
+                  }
+                },
+                "fold": true
+              },
+              "margin": {
+                "name": "数字边距",
+                "type": "number",
+                "default": 28
+              }
+            }
+          },
+          "axisLine": {
+            "name": "轴线",
+            "type": "group",
+            "children": {
+              "lineStyle": {
+                "name": "轴线样式",
+                "type": "group",
+                "children": {
+                  "width": {
+                    "name": "宽度",
+                    "type": "number",
+                    "default": 2
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "yAxis": {
+        "name": "y轴",
+        "type": "group",
+        "children": {
+          "nameTextStyle": {
+            "name": "名称样式",
+            "type": "group",
+            "children": {
+              "color": {
+                "name": "颜色",
+                "type": "color",
+                "default": "#fff"
+              },
+              "fontWeight": {
+                "name": "字体粗细",
+                "type": "text",
+                "default": "bold"
+              },
+              "fontFamily": {
+                "name": "字体",
+                "type": "text",
+                "default": "sans-serif"
+              },
+              "fontSize": {
+                "name": "字号",
+                "type": "number",
+                "default": 20
+              }
+            },
+            "fold": true
+          },
+          "axisLabel": {
+            "name": "刻度标签",
+            "type": "group",
+            "children": {
+              "textStyle": {
+                "name": "文本样式",
+                "type": "group",
+                "children": {
+                  "color": {
+                    "name": "颜色",
+                    "type": "color",
+                    "default": "#fff"
+                  },
+                  "fontWeight": {
+                    "name": "字体粗细",
+                    "type": "text",
+                    "default": "normal"
+                  },
+                  "fontSize": {
+                    "name": "字号",
+                    "type": "number",
+                    "default": 25
+                  }
+                },
+                "fold": true
+              },
+              "margin": {
+                "name": "数字边距",
+                "type": "number",
+                "default": 25
+              }
+            }
+          },
+          "axisLine": {
+            "name": "轴线",
+            "type": "group",
+            "children": {
+              "lineStyle": {
+                "name": "轴线样式",
+                "type": "group",
+                "children": {
+                  "width": {
+                    "name": "宽度",
+                    "type": "number",
+                    "default": 2
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "x": {
+        "name": "x轴名称",
+        "type": "text",
+        "default": ""
+      },
+      "y": {
+        "name": "y轴名称",
+        "type": "text",
+        "default": ""
+      },
+      "unit1": {
+        "name": "x轴单位",
+        "type": "text",
+        "default": "天"
+      },
+      "unit2": {
+        "name": "y轴单位",
+        "type": "text",
+        "default": "平方米"
+      },
+      "size": {
+        "name": "圆点大小",
+        "type": "number",
+        "default": 8
+      },
+      "color": {
+        "name": "原点颜色",
+        "type": "color",
+        "default": "#eeb63f"
+      }
+    },
+    "api_data": {
+      "source": [
+        [10, 30],
+        [20, 50],
+        [30, 60],
+        [40, 80],
+        [50, 120],
+        [60, 70],
+        [70, 45],
+        [80, 20]
+      ]
+    }
+  }
+}
